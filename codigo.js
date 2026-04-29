@@ -76,7 +76,7 @@ nao.addEventListener("mouseover", () => {
     sim.style.transform = `scale(${escala})`;
 
     // barra enchendo
-    let progresso = (tentativas / 5) * 100;
+    let progresso = (tentativas / 3) * 100;
     barra.style.width = progresso + "%";
 
     // posição do botão NÃO (limitado na tela)
@@ -88,7 +88,7 @@ nao.addEventListener("mouseover", () => {
     nao.style.top = y + "px";
 
     // explosão após 10 tentativas
-    if (tentativas >= 5 && !explodiu) {
+    if (tentativas >= 3 && !explodiu) {
         explodiu = true;
         explodirNao();
     }

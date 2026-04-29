@@ -171,7 +171,7 @@ function iniciarCoracoes() {
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.top = "0";
 
-    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    heart.style.fontSize = (Math.random() * 40 + 40) + "px";
     heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
 
     document.body.appendChild(heart);

@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+/* 📦 Caixa principal */
+.box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 10;
+  transition: 0.5s;
+}
+
+/* 🔘 Botões */
+button {
+  margin: 10px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#abrir {
+  background: #ff4b5c;
+  color: white;
+}
+
+#sim {
+  background: #4CAF50;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+#nao {
+  background: #f44336;
+  color: white;
+  position: relative;
+}
+
+/* Hover */
+button:hover {
+  transform: scale(1.1);
+}
+
+/* esconder */
+.hidden {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 💖 CORAÇÕES */
+.heart {
+  position: fixed;
+  color: red;
+  animation: subir linear;
+  pointer-events: none;
+}
+
+/* animação subir */
+@keyframes subir {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-800px);
+    opacity: 0;
+  }
+}
+
+/* 📈 BARRA DO BOTÃO SIM */
+#barra {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: rgba(255, 255, 0, 0.4); /* corrigido */
+  z-index: 0;
+  transition: width 0.3s;
+}
+
+#textoSim {
+  position: relative;
+  z-index: 1;
+}
+
+/* 📸 GALERIA */
+#galeria {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 📸 FOTOS */
+.foto {
+  position: absolute;
+  width: 40vw;
+  max-width: 500px;
+  border-radius: 20px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 1s ease;
+  animation: flutuar 6s ease-in-out infinite alternate;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* 💫 flutuação */
+@keyframes flutuar {
+  0% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  100% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+/* 💥 ANIMAÇÃO DE TREMER (pro botão NÃO) */
+@keyframes tremer {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, 2px); }
+  75% { transform: translate(2px, 2px); }
+  100% { transform: translate(0, 0); }
+}

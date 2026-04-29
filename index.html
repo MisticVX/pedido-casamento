@@ -1,0 +1,53 @@
+</html><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedido 💖</title>
+
+  <!-- Conecta o CSS -->
+  <link rel="stylesheet" href="visual.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Tela inicial -->
+    <div id="tela1" class="box">
+      <h2>Tenho uma pergunta pra você 💌</h2>
+     <button id="abrir">Abrir</button>
+    </div>
+
+    <!-- Tela pergunta -->
+    <div id="tela2" class="box hidden">
+
+      <h2>Quer casar comigo? 💖</h2>
+     
+      <!--Botão Sim-->
+      <button id="sim">
+         <span id="textoSim">Sim 😍</span>
+        <div id="barra"></div>
+      </button>
+
+      <!--Botão Nâo-->
+      <button id="nao">Não 😢</button>
+    </div>
+
+    <div id="final" class="box hidden">
+      <h1>Agora você é minha 💖 </h1>
+    </div>
+
+  </div>
+
+  <!-- Música -->
+  <audio id="musica" loop>
+    <source src="photograf.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="galeria"></div>
+  
+  <!-- Conecta o JS -->
+  <script src="codigo.js"></script>
+
+</body>
+</html>

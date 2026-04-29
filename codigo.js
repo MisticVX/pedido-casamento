@@ -68,7 +68,9 @@ function mostrarFotos() {
 }
 
 // 😏 BOTÃO NÃO FUGINDO + LÓGICA
-nao.addEventListener("mouseover", () => {
+function fugirDoNao(e) {
+    if (e) e.preventDefault(); // evita bug no celular
+
     tentativas++;
 
     // cresce o botão SIM
@@ -79,7 +81,7 @@ nao.addEventListener("mouseover", () => {
     let progresso = (tentativas / 3) * 100;
     barra.style.width = progresso + "%";
 
-    // posição do botão NÃO (limitado na tela)
+    // posição segura na tela
     const x = Math.random() * (window.innerWidth - nao.offsetWidth - 20);
     const y = Math.random() * (window.innerHeight - nao.offsetHeight - 20);
 
@@ -87,12 +89,18 @@ nao.addEventListener("mouseover", () => {
     nao.style.left = x + "px";
     nao.style.top = y + "px";
 
-    // explosão após 10 tentativas
+    // explosão após 3 tentativas
     if (tentativas >= 3 && !explodiu) {
         explodiu = true;
         explodirNao();
     }
-});
+}
+
+// PC
+nao.addEventListener("mouseover", fugirDoNao);
+
+// Celular
+nao.addEventListener("touchstart", fugirDoNao);
 
 // 💥 EXPLOSÃO DO BOTÃO NÃO
 function explodirNao() {
